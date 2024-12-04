@@ -1,6 +1,6 @@
 import React, {useState,useEffect} from 'react'
-import {  useParams} from 'react-router-dom'
-import {Button,Container, Card} from 'react-bootstrap'
+import { Link, useParams} from 'react-router-dom'
+import {Button, Card} from 'react-bootstrap'
 
 export default function UserDetails() {
     const {id} =useParams('id')
@@ -28,8 +28,7 @@ export default function UserDetails() {
         (isDataLoaded &&  userData) &&( 
             <>
             <h1>{userData.title}</h1>
-         <Container >
-            <Card style={{ width: '18rem' }} className='bg-light' border='warning'>
+            <Card style={{ width: '18rem' }}>
       <Card.Img variant="top" src= {userData.image} />
       <Card.Body>
         <Card.Title>{userData.title}</Card.Title>
@@ -42,11 +41,6 @@ export default function UserDetails() {
 
       </Card.Body>        
     </Card>
-    
-    
-</Container>
-    
-    
 
            
             </>

@@ -1,6 +1,5 @@
 import React,{useEffect, useState} from 'react'
 import {  useNavigate } from 'react-router-dom'
-import {Card,CardGroup  } from 'react-bootstrap'
 
 export default function Users() {
 
@@ -42,31 +41,14 @@ export default function Users() {
             </thead>
           <tbody>
             {
-              usersList.map((data,index) => { return( 
-                <>
-    <CardGroup key={index}>
-      <Card>
-        <Card.Img variant="top" src={data.image} />
-        <Card.Body>
-          <Card.Title>{data.title}</Card.Title>
-          <Card.Text>
-            This is a wider card with supporting text below as a natural lead-in
-            to additional content. This content is a little bit longer.
-          </Card.Text>
-        </Card.Body>
-        <Card.Footer>
-          <small className="text-muted">Last updated 3 mins ago</small>
-        </Card.Footer>
-      </Card>
-      </CardGroup>
+              usersList.map((data,index) => { return(
+                <tr key={index} >
+                  <td>{data.id}</td>
+                  <td>{data.title} </td>
 
-
-
-
-
-                  <button onClick={()=>handleView(data.id)}>view</button>
-              
-                  </> 
+                  <td><button onClick={()=>handleView(data.id)}>view</button></td>
+                </tr>
+                
               )
 
               }

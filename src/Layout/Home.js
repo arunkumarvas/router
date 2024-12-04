@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import {Button,Form} from 'react-bootstrap'
+import {useNavigate} from 'react-router-dom'
 
 
 class Home extends Component {
+  
   constructor(props) {
     super(props);
     this.state ={
@@ -12,6 +14,7 @@ class Home extends Component {
 
     };
   }
+  
    handleInputChange = (e) => {
     const {id,value} = e.target;
     this.setState(  { [id]:value } )
@@ -22,8 +25,11 @@ class Home extends Component {
     const { email , password } = this.state;
     const preDefinedEmail = "arun@gmail.com";
     const preDefinePassword ='1234';
+    
   if(email === preDefinedEmail || password === preDefinePassword ) {
+    const navigate =useNavigate();
     console.log(preDefinedEmail,preDefinePassword)
+    navigate('/users')
   
 
   
